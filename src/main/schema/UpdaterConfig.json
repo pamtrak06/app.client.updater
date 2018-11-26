@@ -1,0 +1,59 @@
+{
+  "type" : "object",
+  "properties" : {
+    "updateServers" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "hostConfig" : {
+            "type" : "object",
+            "properties" : {
+              "port" : {
+                "type" : "string"
+              },
+              "path" : {
+                "type" : "string"
+              },
+              "hostName" : {
+                "type" : "string"
+              }
+            }
+          },
+          "proxyConfig" : {
+            "type" : "object",
+            "properties" : {
+              "port" : {
+                "type" : "string"
+              },
+              "username" : {
+                "type" : "string"
+              },
+              "hostName" : {
+                "type" : "string"
+              },
+              "pasword" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "deploymentStrategy" : {
+      "type" : "object",
+      "properties" : {
+        "forceInstallation" : {
+          "type" : "string"
+        },
+        "criteriaLatestVersion" : {
+          "type" : "string",
+          "enum" : [ "ENABLED", "UPPER_VERSION", "CHECKSUM" ]
+        }
+      }
+    },
+    "versionsFilename" : {
+      "type" : "string"
+    }
+  }
+}

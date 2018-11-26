@@ -1,0 +1,132 @@
+{
+  "type" : "object",
+  "properties" : {
+    "appVersions" : {
+      "type" : "object",
+      "properties" : {
+        "appName" : {
+          "type" : "string"
+        },
+        "appVersionList" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "appName" : {
+                "type" : "string"
+              },
+              "id" : {
+                "type" : "string"
+              },
+              "searchAllDisks" : {
+                "type" : "string"
+              },
+              "localPath" : {
+                "type" : "string"
+              },
+              "updateMethod" : {
+                "type" : "string",
+                "enum" : [ "INCREMENTAL", "BACKUP", "ERASE" ]
+              },
+              "activated" : {
+                "type" : "string"
+              },
+              "osTarget" : {
+                "type" : "object",
+                "properties" : {
+                  "arch" : {
+                    "type" : "string"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "version" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "installPath" : {
+                "type" : "string"
+              },
+              "searchPaths" : {
+                "type" : "string"
+              },
+              "appStructure" : {
+                "type" : "object",
+                "properties" : {
+                  "checkList" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "object",
+                      "properties" : {
+                        "checkElement" : {
+                          "type" : "string",
+                          "enum" : [ "CHECK_FOLDER", "CHECK_FILE", "CHECK_CHECKSUM" ]
+                        },
+                        "parameter" : {
+                          "type" : "string"
+                        },
+                        "fileSystemElement" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "archive" : {
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "path" : {
+                    "type" : "string"
+                  },
+                  "mainRun" : {
+                    "type" : "string"
+                  }
+                }
+              },
+              "version" : {
+                "type" : "object",
+                "properties" : {
+                  "deliveredDate" : {
+                    "type" : "string"
+                  },
+                  "value" : {
+                    "type" : "string"
+                  },
+                  "versionFinder" : {
+                    "type" : "object",
+                    "properties" : {
+                      "findMethod" : {
+                        "type" : "string",
+                        "enum" : [ "GETVERSION_FROM_FILENAME_SYNTAX", "GETVERSION_FROM_FILENAME_CRC", "GETVERSION_FROM_XML", "GETVERSION_FROM_PROPERTIES", "GETVERSION_FROM_RUN" ]
+                      },
+                      "parameter" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "deploymentStrategy" : {
+      "type" : "object",
+      "properties" : {
+        "forceInstallation" : {
+          "type" : "string"
+        },
+        "criteriaLatestVersion" : {
+          "type" : "string",
+          "enum" : [ "ENABLED", "UPPER_VERSION", "CHECKSUM" ]
+        }
+      }
+    }
+  }
+}

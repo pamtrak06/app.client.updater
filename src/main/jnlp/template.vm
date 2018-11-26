@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="$encoding"?>
+<jnlp
+    spec="$jnlpspec"
+    codebase="$project.url"
+    href="$outputFile">
+  <information>
+#if($project.Name)
+    <title>$project.Name/{app.name} - Version: $project.version</title>
+#end
+#if($project.Organization.Name)
+    <vendor>$project.Organization.Name</vendor>
+#end
+#if($project.Url)
+    <homepage href="$project.Url"/>
+#end
+	<offline-allowed/>
+    <shortcut online="true">
+		<desktop/>
+		<menu submenu="{app.name}"/>
+    </shortcut>
+#if($project.Description)
+    <description>$project.Description</description>
+#end
+#if($offlineAllowed)
+    <offline-allowed/>
+#end
+  </information>
+#if($allPermissions)
+  <security>
+     <all-permissions/>
+  </security>
+
+  <security>
+  	 <j2ee-application-client-permissions/>
+  </security>
+#end
+  <resources>
+    <j2se version="$j2seVersion"/>
+     $dependencies
+#     $extensions
+  </resources>
+  <update check="background"/>
+  <application-desc main-class="$mainClass">
+  	<argument>{app.name}</argument>
+  	<argument>"$project.url"</argument>
+  	<argument>"offline:false;locale:fr;silentMode:false;adminMode:false";proxy:htp://proxy.org:8080@user:password</argument>
+  </application-desc>
+</jnlp>

@@ -1,0 +1,53 @@
+{
+  "id": "-1946265063",
+  "appName": "app2",
+  "archive": {
+    "name": "app2-archive-V3.4.glis",
+    "path": "app2-updater",
+    "mainRun": "app2/app2.exe"
+  },
+  "version": {
+    "value": "V3.4",
+    "deliveredDate": "20130911",
+    "versionFinder": {
+      "findMethod": "GETVERSION_FROM_FILENAME_SYNTAX",
+      "parameter": "app2-main-(V.*)\\.jar",
+      "comment": "findMethod : method to find version from filename: [GETVERSION_FROM_FILENAME_SYNTAX, GETVERSION_FROM_FILENAME_CRC, GETVERSION_FROM_XML, GETVERSION_FROM_PROPERTIES, GETVERSION_FROM_RUN]#parameter : for findMethod GETVERSION_FROM_FILENAME_SYNTAX : regex with version in group 1#parameter : for findMethod GETVERSION_FROM_FILENAME_CRC : checksum value#parameter : for findMethod GETVERSION_FROM_XML : XPath to version value#parameter : for findMethod GETVERSION_FROM_PROPERTIES : marker to get version value#parameter : for findMethod GETVERSION_FROM_RUN : command to run to retrieve version"
+    }
+  },
+  "osTarget": {
+    "name": "Windows 7",
+    "version": "6.1",
+    "arch": "x86"
+  },
+  "appStructure": {
+    "checkList": [
+      {
+        "checkElement": "CHECK_FOLDER",
+        "fileSystemElement": "tmp/client/app2/app2V3.4/app2/plugins",
+        "parameter": "exist"
+      },
+      {
+        "checkElement": "CHECK_FOLDER",
+        "fileSystemElement": "tmp/client/app2/app2V3.4/app2/jre",
+        "parameter": "exist"
+      },
+      {
+        "checkElement": "CHECK_FILE",
+        "fileSystemElement": "tmp/client/app2/app2V3.4/app2/app2.exe",
+        "parameter": "exist"
+      },
+      {
+        "checkElement": "CHECK_CHECKSUM",
+        "fileSystemElement": "tmp/client/app2/app2V3.4/app2/app2.exe",
+        "parameter": "759e1a30ca2b3bfe0c2f86e99360767a"
+      }
+    ]
+  },
+  "activated": "False",
+  "installPath": "tmp/client/app2/app2V3.4",
+  "searchPaths" : "tmp/client/app2/App2V3.4",
+  "searchAllDisks" : "false",
+  "localPath" : "",
+  "updateMethod": "BACKUP"
+}

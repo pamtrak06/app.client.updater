@@ -1,0 +1,23 @@
+{
+  "updateServers": [
+    {
+      "hostConfig": {
+        "path": "/app2-updater/",
+        "hostName": "localhost",
+        "port": "3333"
+      },
+      "proxyConfig": {
+        "username": "user",
+        "pasword": "password",
+        "hostName": "localhost",
+        "port": "3333"
+      }
+    }
+  ],
+  "versionsFilename": "app2-versions.json",
+  "deploymentStrategy": {
+    "criteriaLatestVersion": "ENABLED",
+    "forceInstallation" : "false",
+    "comment": "Available values for criteriaLatestVersion :[ENABLED, UPPER_VERSION, CHECKSUM]"
+  }
+}

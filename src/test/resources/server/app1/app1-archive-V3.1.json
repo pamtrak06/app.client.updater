@@ -1,0 +1,53 @@
+{
+    "id": "-1946265063",
+    "appName": "app1",
+    "archive": {
+        "name": "app1-archive-V3.1.glis",
+        "path": "app1-updater",
+        "mainRun": "app1/app1.exe"
+    },
+    "version": {
+        "value": "V3.1",
+        "deliveredDate": "20130911",
+        "versionFinder": {
+            "findMethod": "GETVERSION_FROM_FILENAME_SYNTAX",
+            "parameter": "app1-main-(V.*)\\.jar",
+            "comment": "findMethod : method to find version from filename: [GETVERSION_FROM_FILENAME_SYNTAX, GETVERSION_FROM_FILENAME_CRC, GETVERSION_FROM_XML, GETVERSION_FROM_PROPERTIES, GETVERSION_FROM_RUN]#parameter : for findMethod GETVERSION_FROM_FILENAME_SYNTAX : regex with version in group 1#parameter : for findMethod GETVERSION_FROM_FILENAME_CRC : checksum value#parameter : for findMethod GETVERSION_FROM_XML : XPath to version value#parameter : for findMethod GETVERSION_FROM_PROPERTIES : marker to get version value#parameter : for findMethod GETVERSION_FROM_RUN : command to run to retrieve version"
+        }
+    },
+    "osTarget": {
+        "name": "Windows 7",
+        "version": "6.1",
+        "arch": "x86"
+    },
+    "appStructure": {
+        "checkList": [
+            {
+                "checkElement": "CHECK_FOLDER",
+                "fileSystemElement": "tmp/client/app1/App1V3.1/app1/plugins",
+                "parameter": "exist"
+            },
+            {
+                "checkElement": "CHECK_FOLDER",
+                "fileSystemElement": "tmp/client/app1/App1V3.1/app1/jre",
+                "parameter": "exist"
+            },
+            {
+                "checkElement": "CHECK_FILE",
+                "fileSystemElement": "tmp/client/app1/App1V3.1/app1/app1.exe",
+                "parameter": "exist"
+            },
+            {
+                "checkElement": "CHECK_CHECKSUM",
+                "fileSystemElement": "tmp/client/app1/App1V3.1/app1/app1.exe",
+                "parameter": "759e1a30ca2b3bfe0c2f86e99360767a"
+            }
+        ]
+    },
+    "activated": "False",
+    "installPath": "tmp/client/app1/App1V3.1",
+    "searchPaths" : "tmp/client/app1/App1V3.1",
+    "searchAllDisks" : "false",
+    "localPath" : "",
+    "updateMethod": "BACKUP"
+}
