@@ -1,21 +1,16 @@
-# ----------------------------------------
-# USE CASE - SERVER
-# ----------------------------------------
+# Application software updater
 
-# USE CASE :  NEW APP TO INSTANTIATE
+## Use case - server side
 
-# USE CASE :  NEW APP VERSION TO INTEGRATE
-
-# USE CASE :  NEW APP VERSION TO DEPLOY
-
-# USE CASE :  ANALYSIS OF DEPLOYMENT RESULT
+### 1. USE CASE :  NEW APP TO INSTANTIATE
+### 2. USE CASE :  NEW APP VERSION TO INTEGRATE
+### 3. USE CASE :  NEW APP VERSION TO DEPLOY
+### 4.  USE CASE :  ANALYSIS OF DEPLOYMENT RESULT
 
 
-# ----------------------------------------
-# USE CASE - CLIENT
-# ----------------------------------------
+## Use case - client side
 
-# USE CASE : GET NEW VERSION
+### 1. USE CASE : GET NEW VERSION
 	- WHICH
 		- DEFINITIVE LAST VERSION (FROM VERSION NUMBER OR CHECKSUM)
 		- MARKED AS ACTIVE VERSION
@@ -25,47 +20,47 @@
 		- INSTALL A VERSION
 		- WRITE DEPLOYMENT RESULT (LOCAL, REMOTE)
 	
-# USE CASE : GET OFFLINE VERSION
+### 2. USE CASE : GET OFFLINE VERSION
 	- DOWNLOAD ARCHIVE + JSON in specific path
 	- RUN APP CLIENT UPDATER
 	
-# USE CASE : DEGRADED
+### 3. USE CASE : DEGRADED
 	- NO CONNECTION
 	- LOOSE CONEECTION
 	- RESOURCES UNAVAILABLE
 
-# ----------------------------------------
-# TESTS CASE
-# ----------------------------------------
+## TESTS CASE
 
-# Test reading app config.json file				UpdaterConfigTest	OK
+### 1. Test reading app config.json file
+UpdaterConfigTest	OK
 
-# Test reading app version.json file			AppVersionsTest		OK
+### 2. Test reading app version.json file
+AppVersionsTest		OK
 
-# Test updater mode
+### 3. Test updater mode
 	- offline installation 
 		(file already downloaded, server connection off)			NOK
 	- online 
-		(connection with server ok)									NOK		
+		(connection with server ok)						NOK		
 
-# Test checking local app version structure		AppStructureTest	OK
+### 4. Test checking local app version structure
+AppStructureTest	OK
 	- FOLDER exist								
 	- FILE exist
 	- checksum ok
 	
-# Test requirements
+### 5. Test requirements
 	- third-party applications
 		- exist ? (ex. : database mySql)
 		- process is running ? (ex. : database mySql connection started)
 
-
-# Test find local versions
+### 6. Test find local versions
 	- identify version
 		- filename
 		- checksum
 		- contents information
 		
-# Test find remote versions						NOK
+### 7. Test find remote versions						NOK
 	- getLatestVersion							NOK
 		- method version enabled				NOK
 		- method upper version					NOK
@@ -75,17 +70,17 @@
 		- context os not available				NOK
 		- context : os version unavail.			NOK
 
-# Test download glis file
+### 8. Test download glis file
 		- one from os name & version			NOK
 		- one from os name only					NOK
 		- all os version available				NOK
 
-# Test unzip glis archive
+### 9. Test unzip glis archive
 
 
-# Test execute main file from archive installed
+### 10. Test execute main file from archive installed
 
-# Test record result of update processus
+### 11. Test record result of update processus
 	- in local file
 	- in remote file
 	- in remote database
@@ -96,15 +91,14 @@
 			- path
 			- date
 
-# Test no connection, put to offline mode		NOK
+### 12. Test no connection, put to offline mode		NOK
 
-# Test internationalization						NOK
+### 13. Test internationalization			NOK
 
-# Test logger									NOK
+### 14. Test logger					NOK
 	
-# ----------------------------------------
-# TODO
-# ----------------------------------------
+## TODO LIST
+
 * Retrieve proxy from system
 * Schema validator : http://jsonlint.com/, http://json.parser.online.fr/
 * Web project
